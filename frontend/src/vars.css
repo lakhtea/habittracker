@@ -1,0 +1,11 @@
+* {
+  --bg-c: black;
+  --tx-c: white;
+  --btn-c: lightblue;
+}
+
+.lightMode * {
+  --bg-c: white;
+  --tx-c: black;
+  --btn-c: darkblue;
+}

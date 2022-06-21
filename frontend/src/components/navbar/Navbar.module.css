@@ -1,0 +1,22 @@
+.container {
+  height: 10%;
+  max-height: 50px;
+  padding: 10px;
+  background-color: var(--bg-c);
+  color: var(--tx-c);
+}
+
+.flexContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.header {
+  font-size: 1.5em;
+}
+
+.item {
+  cursor: pointer;
+}
