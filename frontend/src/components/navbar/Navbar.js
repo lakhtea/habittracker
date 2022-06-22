@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 
-//styles
 import styles from "./Navbar.module.css";
 
 const Navbar = () => {
@@ -12,7 +11,7 @@ const Navbar = () => {
         Habit Tracker
       </Link>
       <div className={styles.flexContainer}>
-        <Link to={"/journal"} className={styles.item}>
+        <Link to={"/"} className={styles.item}>
           My Journal
         </Link>
         <Link to={"/habits"} className={styles.item}>
