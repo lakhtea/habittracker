@@ -11,6 +11,7 @@ import Navbar from "./navbar/Navbar";
 import Journal from "./journal/Journal";
 import Login from "./login/Login";
 import Signup from "./signup/Signup";
+import LandingPage from "./landingPage/LandingPage";
 
 const App = () => {
   // console.log(
@@ -46,7 +47,7 @@ const App = () => {
         {/* <Route exact path="/clothing/:_id" component={ClothingShowContainer} />
       <Route exact path="/search" component={SearchResultsContainer} /> */}
         <Route exact path="/login" element={<AuthRoute />}>
-          <Route exact path="/login" element={<Login />} />
+          <Route exact path="/login" element={<LandingPage />} />
         </Route>
         {/* <AuthRoute exact path="/signup" element={Signup()} /> */}
       </Routes>
