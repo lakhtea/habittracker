@@ -1,5 +1,6 @@
 import users from "./usersReducer";
+import session from "./sessionReducer";
 
-const RootReducer = { users };
+const RootReducer = { users, session };
 
 export default RootReducer;

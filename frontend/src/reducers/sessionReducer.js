@@ -10,3 +10,5 @@ const initialState = {
 const sessionReducer = createReducer(initialState, (builder) => {
   //   builder.addCase();
 });
+
+export default sessionReducer;
