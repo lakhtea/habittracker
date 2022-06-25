@@ -1,55 +1,32 @@
-import React from "react";
 import { Routes, Route } from "react-router-dom";
 
+//styles
 import styles from "./App.module.css";
 
 //utils
-import { AuthRoute } from "../utils/routeUtil";
+import { AuthRoute, ProtectedRoute } from "../utils/routeUtil";
 
 //components
 import Navbar from "./navbar/Navbar";
-import Journal from "./journal/Journal";
-import Login from "./login/Login";
-import Signup from "./signup/Signup";
 import LandingPage from "./landingPage/LandingPage";
+import Journal from "./journal/Journal";
+import Habits from "./habits/Habits";
+import Systems from "./systems/Systems";
 
 const App = () => {
-  // console.log(
-  //   AuthRoute({ element: Navbar(), path: "/", exact: true }),
-  //   Navbar()
-  // );
   return (
     <div className={styles.container}>
       <Navbar></Navbar>
       <Routes>
-        {/* <ProtectedRoute exact path="/closet" component={ClosetContainer} />
-      <ProtectedRoute
-        exact
-        path="/clothing/new"
-        component={NewClothingFormContainer}
-      />
-      <ProtectedRoute
-        exact
-        path="/outfit/new"
-        component={NewOutfitFormContainer}
-      />
-      <ProtectedRoute
-        exact
-        path="/outfit/:id"
-        component={OutfitShowContainer}
-      />
-      <ProtectedRoute
-        exact
-        path="/clothing/:id/edit"
-        component={EditClothingFormContainer}
-      /> */}
-        <Route exact path="/" element={Journal()} />
-        {/* <Route exact path="/clothing/:_id" component={ClothingShowContainer} />
-      <Route exact path="/search" component={SearchResultsContainer} /> */}
-        <Route exact path="/login" element={<AuthRoute />}>
+        <Route element={<AuthRoute />}>
           <Route exact path="/login" element={<LandingPage />} />
         </Route>
-        {/* <AuthRoute exact path="/signup" element={Signup()} /> */}
+
+        <Route element={<ProtectedRoute />}>
+          <Route exact path="/" element={<Journal />} />
+          <Route exact path="/habits" element={<Systems />} />
+          <Route exact path="/systems" element={<Habits />} />
+        </Route>
       </Routes>
     </div>
   );
