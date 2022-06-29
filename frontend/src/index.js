@@ -1,10 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import createStore from "./store/store";
 import jwt_decode from "jwt-decode";
-import { setAuthToken } from "./utils/sessionApiUtil";
+
+//styles
 import "./index.css";
 import "./vars.css";
+
+//store
+import createStore from "./store/store";
+
+//utils
+import { setAuthToken } from "./utils/sessionApiUtil";
+
+//components
 import Root from "./components/Root";
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -23,6 +31,8 @@ document.addEventListener("DOMContentLoaded", () => {
   } else {
     store = createStore({});
   }
+
+  window.store = store;
 
   const root = ReactDOM.createRoot(document.getElementById("root"));
   root.render(<Root store={store} />);

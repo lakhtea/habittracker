@@ -1,11 +1,13 @@
 * {
-  --bg-c: black;
-  --tx-c: white;
-  --btn-c: lightblue;
+  --background-color: black;
+  --text-color: white;
+  --button-color: lightblue;
+  --border-color: black;
 }
 
 .lightMode * {
-  --bg-c: white;
-  --tx-c: black;
-  --btn-c: darkblue;
+  --background-color: white;
+  --text-color: black;
+  --button-color: darkblue;
+  --border-color: white;
 }

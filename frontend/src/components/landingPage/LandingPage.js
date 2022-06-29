@@ -8,11 +8,13 @@ import Login from "../login/Login";
 import Signup from "../signup/Signup";
 
 const LandingPage = () => {
+  const { flexContainer, container, gif } = styles;
+
   const [registeredUser, setRegisteredUser] = useState(false);
   return (
-    <div className={styles.flexContainer}>
-      <div class={styles.container}>
-        <div class={styles.gif}></div>
+    <div className={flexContainer}>
+      <div className={container}>
+        <div className={gif}></div>
       </div>
 
       {registeredUser ? (

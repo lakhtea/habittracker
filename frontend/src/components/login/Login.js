@@ -1,20 +1,48 @@
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+
+//actions
+import { login } from "../../actions/sessionActions";
+
+//styles
 import styles from "./Login.module.css";
 
 const Login = ({ setRegisteredUser }) => {
+  const { container, form, flex, header, input } = styles;
+
+  const dispatch = useDispatch();
+  const [userData, setUserData] = useState({
+    email: "",
+    password: "",
+  });
+
+  const handleChange = (e) =>
+    setUserData({ ...userData, [e.target.name]: e.target.value });
+
   return (
-    <div className={styles.container}>
-      <form className={`${styles.form} ${styles.flex}`} action="">
-        <div className={styles.flex}>
-          <h1 className={styles.header}>Sign in</h1>
+    <div className={container}>
+      <form
+        className={`${form} ${flex}`}
+        onSubmit={(e) => {
+          e.preventDefault();
+          dispatch(login(userData));
+        }}
+      >
+        <div className={flex}>
+          <h1 className={header}>Sign in</h1>
           <input
-            className={styles.input}
+            name="email"
+            className={input}
             type="text"
-            placeholder="username/email/phone number"
+            placeholder="Email"
+            onChange={handleChange}
           />
           <input
-            className={styles.input}
+            name="password"
+            className={input}
             type="password"
-            placeholder="password"
+            placeholder="Password"
+            onChange={handleChange}
           />
           <button type="submit">Sign in!</button>
         </div>

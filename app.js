@@ -30,7 +30,7 @@ mongoose
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-// app.use("/api/users", users);
+app.use("/api/users", users);
 // app.use("/api/clothing", clothing);
 // app.use("/api/outfit", outfit);
 // app.use("/api/search", search);

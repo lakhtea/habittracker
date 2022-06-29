@@ -1,15 +1,14 @@
-import { createReducer } from "@reduxjs/toolkit";
+// import { createReducer } from "@reduxjs/toolkit";
 
-import { receiveCurrentUser } from "../actions/usersActions";
+// import { receiveCurrentUser } from "../actions/sessionActions";
 
-const initialState = {};
+// const initialState = {};
 
-const usersReducer = createReducer(initialState, (builder) => {
-  builder.addCase(receiveCurrentUser, (state, action) => {
-    return Object.assign({}, state, {
-      [action.currentUser.id]: action.currentUser,
-    });
-  });
-});
+// const usersReducer = createReducer(initialState, (builder) => {
+//   builder.addCase(receiveCurrentUser, (state, action) => {
+//     const user = action.payload;
+//     state[user.id] = user;
+//   });
+// });
 
-export default usersReducer;
+// export default usersReducer;

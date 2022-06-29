@@ -24,8 +24,8 @@ const App = () => {
 
         <Route element={<ProtectedRoute />}>
           <Route exact path="/" element={<Journal />} />
-          <Route exact path="/habits" element={<Systems />} />
-          <Route exact path="/systems" element={<Habits />} />
+          <Route exact path="/habits" element={<Habits />} />
+          <Route exact path="/systems" element={<Systems />} />
         </Route>
       </Routes>
     </div>

@@ -1,6 +1,10 @@
 import { createReducer } from "@reduxjs/toolkit";
 
-import { receiveCurrentUser } from "../actions/usersActions";
+import {
+  receiveCurrentUser,
+  receiveUserSignIn,
+  logoutUser,
+} from "../actions/sessionActions";
 
 const initialState = {
   isAuthenticated: false,
@@ -8,7 +12,20 @@ const initialState = {
 };
 
 const sessionReducer = createReducer(initialState, (builder) => {
-  //   builder.addCase();
+  builder
+    .addCase(receiveCurrentUser, (state, action) => {
+      const user = action.payload;
+      state.isAuthenticated = !!user;
+      state.user = user;
+    })
+    .addCase(receiveUserSignIn, (state) => {
+      state.isSignedIn = true;
+      state.isAuthenticated = true;
+    })
+    .addCase(logoutUser, (state) => {
+      state.isAuthenticated = false;
+      state.user = null;
+    });
 });
 
 export default sessionReducer;
