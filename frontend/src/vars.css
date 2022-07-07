@@ -1,13 +1,23 @@
+:root {
+  --white: #ffffff;
+  --blue: #2c6975;
+  --green: #68b2a0;
+  --sage: #cde0c9;
+  --lightSage: #e0ecde;
+  --black: black;
+  --mint-green: #b7d3b5;
+  --lightBlue: #bcddd4;
+}
+
 * {
-  --background-color: black;
-  --text-color: white;
-  --button-color: lightblue;
-  --border-color: black;
+  --background-color: var(--black);
+  --background-color-nav: var(--blue);
+  --text-color: var(--mint-green);
+  --button-color: var(--green);
+  --border-color: var(--green);
 }
 
 .lightMode * {
-  --background-color: white;
-  --text-color: black;
-  --button-color: darkblue;
-  --border-color: white;
+  --background-color: var(--white);
+  --text-color: var(--blue);
 }

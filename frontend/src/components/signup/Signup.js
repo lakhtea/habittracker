@@ -7,8 +7,11 @@ import styles from "./Signup.module.css";
 //actions
 import { signup } from "../../actions/sessionActions";
 
+//elements
+import FormInput from "../../elements/input/FormInput";
+
 const Signup = ({ setRegisteredUser }) => {
-  const { container, form, flex, header, input } = styles;
+  const { container, form, flex, header } = styles;
 
   const dispatch = useDispatch();
   const [userData, setUserData] = useState({
@@ -32,33 +35,33 @@ const Signup = ({ setRegisteredUser }) => {
       >
         <div className={flex}>
           <h1 className={header}>Sign up</h1>
-          <input
+          <FormInput
             name="email"
-            className={input}
             type="text"
             placeholder="Enter your email address"
-            onChange={handleChange}
+            handleChange={handleChange}
+            hasText={userData.email.length}
           />
-          <input
+          <FormInput
             name="username"
-            className={input}
             type="text"
             placeholder="Create a username"
-            onChange={handleChange}
+            handleChange={handleChange}
+            hasText={userData.username.length}
           />
-          <input
+          <FormInput
             name="password"
-            className={input}
             type="password"
             placeholder="Create a password"
-            onChange={handleChange}
+            handleChange={handleChange}
+            hasText={userData.password.length}
           />
-          <input
+          <FormInput
             name="confirmPassword"
-            className={input}
             type="password"
             placeholder="Confirm your password"
-            onChange={handleChange}
+            handleChange={handleChange}
+            hasText={userData.confirmPassword.length}
           />
           <button type="submit">Sign up!</button>
         </div>

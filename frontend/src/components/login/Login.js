@@ -7,8 +7,10 @@ import { login } from "../../actions/sessionActions";
 //styles
 import styles from "./Login.module.css";
 
+import FormInput from "../../elements/input/FormInput";
+
 const Login = ({ setRegisteredUser }) => {
-  const { container, form, flex, header, input } = styles;
+  const { container, form, flex, header } = styles;
 
   const dispatch = useDispatch();
   const [userData, setUserData] = useState({
@@ -30,19 +32,17 @@ const Login = ({ setRegisteredUser }) => {
       >
         <div className={flex}>
           <h1 className={header}>Sign in</h1>
-          <input
+          <FormInput
             name="email"
-            className={input}
             type="text"
             placeholder="Email"
-            onChange={handleChange}
+            handleChange={handleChange}
           />
-          <input
+          <FormInput
             name="password"
-            className={input}
             type="password"
             placeholder="Password"
-            onChange={handleChange}
+            handleChange={handleChange}
           />
           <button type="submit">Sign in!</button>
         </div>
