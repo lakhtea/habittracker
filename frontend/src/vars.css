@@ -1,4 +1,8 @@
 :root {
+  font-size: 62.5%;
+  --error-color: #ee6352;
+  --gray: #333;
+  --lightGray: #ddd;
   --white: #ffffff;
   --blue: #2c6975;
   --green: #68b2a0;
@@ -7,10 +11,12 @@
   --black: black;
   --mint-green: #b7d3b5;
   --lightBlue: #bcddd4;
+  --form-border: 0.1rem solid var(--border-color);
 }
 
 * {
-  --background-color: var(--black);
+  color: var(--gray);
+  --background-color: var(--gray);
   --background-color-nav: var(--blue);
   --text-color: var(--mint-green);
   --button-color: var(--green);

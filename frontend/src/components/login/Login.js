@@ -5,12 +5,14 @@ import { useDispatch } from "react-redux";
 import { login } from "../../actions/sessionActions";
 
 //styles
-import styles from "./Login.module.css";
+// import styles from "./Login.module.css";
 
+//elements
+import Form from "../../elements/form/Form";
 import FormInput from "../../elements/input/FormInput";
 
 const Login = ({ setRegisteredUser }) => {
-  const { container, form, flex, header } = styles;
+  // const {} = styles;
 
   const dispatch = useDispatch();
   const [userData, setUserData] = useState({
@@ -20,42 +22,35 @@ const Login = ({ setRegisteredUser }) => {
 
   const handleChange = (e) =>
     setUserData({ ...userData, [e.target.name]: e.target.value });
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(login(userData));
+  };
 
   return (
-    <div className={container}>
-      <form
-        className={`${form} ${flex}`}
-        onSubmit={(e) => {
-          e.preventDefault();
-          dispatch(login(userData));
+    <Form handleSubmit={handleSubmit} buttonText="Log in!">
+      <FormInput
+        name="email"
+        type="text"
+        placeholder="Email"
+        handleChange={handleChange}
+      />
+      <FormInput
+        name="password"
+        type="password"
+        placeholder="Password"
+        handleChange={handleChange}
+      />
+      <button type="submit">Sign in!</button>
+
+      <span
+        onClick={() => {
+          setRegisteredUser(false);
         }}
       >
-        <div className={flex}>
-          <h1 className={header}>Sign in</h1>
-          <FormInput
-            name="email"
-            type="text"
-            placeholder="Email"
-            handleChange={handleChange}
-          />
-          <FormInput
-            name="password"
-            type="password"
-            placeholder="Password"
-            handleChange={handleChange}
-          />
-          <button type="submit">Sign in!</button>
-        </div>
-
-        <span
-          onClick={() => {
-            setRegisteredUser(false);
-          }}
-        >
-          New to Habit Tracker? Create an account today!
-        </span>
-      </form>
-    </div>
+        New to Habit Tracker? Create an account today!
+      </span>
+    </Form>
   );
 };
 

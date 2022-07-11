@@ -1,49 +1,40 @@
 .container {
   position: relative;
-  width: 100%;
-  height: fit-content;
-  margin: 15px;
+  margin-block: 1.5rem;
   font-weight: bold;
 }
 
 .input {
   width: 100%;
-  border: 3px solid gray;
-  border-radius: 5px;
-  padding: 10px;
-  height: 50px;
+  border: 0.3rem solid var(--lightGray);
+  padding: 1rem;
+  height: 5rem;
   font-weight: inherit;
-  letter-spacing: 1px;
+  letter-spacing: 0.1rem;
 }
 
 .input:focus {
-  border: 3px solid red;
+  border: 0.3rem solid var(--error-color);
 }
 
 ._placeholder {
   position: absolute;
-  top: 15px;
-  left: 10px;
-  color: gray;
-  letter-spacing: 1px;
+  top: 1.5rem;
+  left: 1rem;
+  color: var(--gray);
+  font-size: 1.4rem;
+  letter-spacing: 0.1rem;
   pointer-events: none;
   transition: 0.2s ease;
 }
 
-.input:focus + ._placeholder {
-  color: red;
-  font-size: 14px;
-  left: 0;
-  transform: translateY(-210%);
-}
-
+.input:focus + ._placeholder,
 ._placeholder.focus {
+  color: var(--error-color);
   left: 0;
-  color: red;
-  font-size: 14px;
   transform: translateY(-210%);
 }
 
 .input.focus {
-  border-color: red;
+  border-color: var(--error-color);
 }

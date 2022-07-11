@@ -13,9 +13,9 @@ const LandingPage = () => {
   const [registeredUser, setRegisteredUser] = useState(false);
   return (
     <div className={flexContainer}>
-      <div className={container}>
+      {/* <div className={container}>
         <div className={gif}></div>
-      </div>
+      </div> */}
 
       {registeredUser ? (
         <Login setRegisteredUser={setRegisteredUser} />
